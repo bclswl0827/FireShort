@@ -1,0 +1,58 @@
+/* 引入 TailwindCSS 库 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input {
+    @apply bg-gray-600 rounded-sm text-center;
+}
+
+button {
+    @apply bg-transparent border rounded-sm hover:bg-gray-50 hover:text-black;
+}
+
+/* 路由前进转场动画 */
+.app-push-enter {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.app-push-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 500ms;
+}
+
+.app-push-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.app-push-exit-active {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 500ms;
+}
+
+/* 路由后退转场动画 */
+.app-pop-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.app-pop-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 500ms;
+}
+
+.app-pop-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.app-pop-exit-active {
+    opacity: 0;
+    transform: translate(100%);
+    transition: all 500ms;
+}
