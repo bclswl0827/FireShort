@@ -1,0 +1,54 @@
+{
+    "rules": {
+        "shorts": {
+            "$query": {
+                "comment": {
+                    ".read": true,
+                    ".write": true,
+                    ".validate": "newData.isString()"
+                },
+                "slug": {
+                    ".read": true,
+                    ".write": true,
+                    ".validate": "newData.isString()"
+                },
+                "url": {
+                    ".read": true,
+                    ".write": true,
+                    ".validate": "newData.isString() && newData.val().matches(/^(https|http|ftp):\\/\\//)"
+                },
+                "time": {
+                    ".read": true,
+                    ".write": true,
+                    ".validate": "newData.isNumber() && now - newData.val() < 30000"
+                },
+                "user": {
+                    "ua": {
+                        ".read": true,
+                        ".write": true,
+                        ".validate": "newData.isString()"
+                    },
+                    "country": {
+                        ".read": true,
+                        ".write": true,
+                        ".validate": "newData.isString() && newData.val().length == 2"
+                    },
+                    "ip": {
+                        ".read": true,
+                        ".write": true,
+                        ".validate": "newData.isString() && (newData.val().matches(/^((25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)$/) || newData.val().matches(/^([\\da-fA-F]{1,4}:){7}[\\da-fA-F]{1,4}$/))"
+                    },
+                    ".validate": "newData.hasChildren(['country', 'ip', 'ua'])"
+                },
+                ".read": true,
+                ".write": true,
+                ".indexOn": [
+                    "time"
+                ],
+                ".validate": "newData.hasChildren(['url','slug','time','comment','user'])"
+            },
+            ".read": "auth != null",
+            ".write": "auth != null"
+        }
+    }
+}

@@ -3,7 +3,7 @@ import userRequest from "./request";
 
 // 正则匹配检测 URL 是否符合规范
 const urlChecker = (url) => {
-    const urlReg = /^((https|http|ftp|rtsp|mms)?:\/\/)[^\s]+/;
+    const urlReg = /^((https|http|ftp)?:\/\/)[^\s]+/;
     return urlReg.test(url);
 };
 
