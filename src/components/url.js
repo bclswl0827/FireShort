@@ -31,7 +31,7 @@ const addUrl = ({ url, slug, comment }) => {
                 }${appConfig.router === "hash" ? "/#/" : ""}${
                     res.data.slug
                 }" target="_blank">${appConfig.domain}${
-                    appConfig.router === "hash" ? "/#/" : ""
+                    appConfig.router === "hash" ? "/#/" : "/"
                 }${
                     res.data.slug
                 }</a></strong><br />您可以用这个链接访问对应网址<br />
