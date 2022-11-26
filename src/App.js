@@ -1,6 +1,7 @@
 import React, { Suspense, Component, cloneElement, lazy } from "react";
 import {
-    HashRouter as Router,
+    HashRouter,
+    BrowserRouter,
     Routes as Switch,
     Route,
 } from "react-router-dom";
@@ -68,12 +69,22 @@ export default class AppLayout extends Component {
         // 将 history、location、match 丢进组件属性中
         const Routes = withRouter(RouteModule);
 
+        if (appConfig.router === "hash") {
+            return (
+                <HashRouter>
+                    <Suspense fallback={<AppSpinner />}>
+                        <Routes />
+                    </Suspense>
+                </HashRouter>
+            );
+        }
+
         return (
-            <Router>
+            <BrowserRouter>
                 <Suspense fallback={<AppSpinner />}>
                     <Routes />
                 </Suspense>
-            </Router>
+            </BrowserRouter>
         );
     }
 }

@@ -15,7 +15,10 @@ export default class AppJump extends Component {
             time: "正在获取中",
             url: "正在获取中",
             comment: "正在获取中",
-            slug: window.location.hash.replace("#/", ""),
+            slug:
+                appConfig.router === "hash"
+                    ? window.location.hash.replace("#/", "")
+                    : window.location.pathname.replace("/", ""),
         };
         this.revokeUrl = this.revokeUrl.bind(this);
     }

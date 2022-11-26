@@ -11,7 +11,7 @@ let appConfig = {
         transition: 500, // 转场动画时长
         notification: 1000, // 通知动画时长
     },
-    router: "hash", // hash 或者 history
+    router: "browser", // hash 或者 browser
 };
 
 export default appConfig;
