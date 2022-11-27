@@ -28,7 +28,7 @@ const addUrl = ({ url, slug, comment }) => {
                 title: "成功",
                 html: `<strong><a href="${window.location.protocol}//${
                     appConfig.domain
-                }${appConfig.router === "hash" ? "/#/" : ""}${
+                }${appConfig.router === "hash" ? "/#/" : "/"}${
                     res.data.slug
                 }" target="_blank">${appConfig.domain}${
                     appConfig.router === "hash" ? "/#/" : "/"
