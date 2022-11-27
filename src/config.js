@@ -11,7 +11,7 @@ let appConfig = {
         transition: 500, // 转场动画时长
         notification: 1000, // 通知动画时长
     },
-    router: "redirect", // hash、browser、redirect
+    router: "hash", // hash、browser
 };
 
 export default appConfig;
