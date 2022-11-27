@@ -12,24 +12,9 @@ import appConfig from "./config";
 import getUserInfo from "./components/user";
 
 // 主页 Lazy Loading
-const AppHome = lazy(() => {
-    return new Promise((resolve) => {
-        setTimeout(
-            () => resolve(import("./modules/home")),
-            appConfig.animation.transition
-        );
-    });
-});
-
+const AppHome = lazy(() => import("./modules/home"));
 // 短链接 Lazy Loading
-const AppJump = lazy(() => {
-    return new Promise((resolve) => {
-        setTimeout(
-            () => resolve(import("./modules/jump")),
-            appConfig.animation.transition
-        );
-    });
-});
+const AppJump = lazy(() => import("./modules/jump"));
 
 // 设定路由和转场动画
 const RouteModule = (props) => {
