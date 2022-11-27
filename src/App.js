@@ -69,7 +69,7 @@ export default class AppLayout extends Component {
         // 将 history、location、match 丢进组件属性中
         const Routes = withRouter(RouteModule);
 
-        if (appConfig.router === "hash") {
+        if (appConfig.router === "hash" || appConfig.router === "redirect") {
             return (
                 <HashRouter>
                     <Suspense fallback={<AppSpinner />}>
