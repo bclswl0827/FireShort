@@ -16,7 +16,7 @@ export default class AppJump extends Component {
             url: "正在获取中",
             comment: "正在获取中",
             slug:
-                appConfig.router === "hash"
+                appConfig.router === "hash" || appConfig.router === "redirect"
                     ? window.location.hash.replace("#/", "")
                     : window.location.pathname.replace("/", ""),
         };
