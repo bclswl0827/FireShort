@@ -33,7 +33,9 @@ export default class AppHome extends Component {
             return false;
         }
         if (slug === "") {
-            slug = Math.random().toString(36).slice(-6);
+            slug = Math.random()
+                .toString(36)
+                .slice(appConfig.slug * -1);
         }
         Swal.fire({
             icon: "question",
