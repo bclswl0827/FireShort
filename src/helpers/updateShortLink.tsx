@@ -1,39 +1,32 @@
 import userRequest from "./userRequest";
-import { Result as UserInfo } from "./getUserInfo";
 
 interface Params {
-    url: string;
-    slug: string;
-    remark: string;
+    url?: string;
+    slug?: string;
+    remark?: string;
     firebase: string;
-    user: UserInfo | any;
 }
 
-const addShortLink = async ({
+const updateShortLink = async ({
     url,
     slug,
     remark,
     firebase,
-    user,
-}: Params): Promise<string> => {
+}: Params): Promise<void> => {
     const dbURL = `${firebase}/shorts/${slug}.json`;
     const res = await userRequest({
-        method: "put",
+        method: "patch",
         url: dbURL,
         data: {
             url: url,
             slug: slug,
             remark: remark,
-            timestamp: Date.now(),
-            user: user,
         },
     });
 
     if (res.status !== 200) {
-        return Promise.reject("短链生成失败");
+        return Promise.reject("短链更新失败");
     }
-
-    return slug;
 };
 
-export default addShortLink;
+export default updateShortLink;

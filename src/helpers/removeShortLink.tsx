@@ -13,7 +13,7 @@ const removeShortLink = async ({ slug, firebase }: Params): Promise<string> => {
     });
 
     if (res.status !== 200) {
-        return Promise.reject("短链删除接失败");
+        return Promise.reject("短链删除失败");
     }
 
     return slug;

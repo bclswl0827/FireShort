@@ -1,7 +1,7 @@
 import axios, { AxiosResponse, AxiosError } from "axios";
 
 interface Params {
-    method: "get" | "post" | "put" | "delete";
+    method: "get" | "post" | "put" | "delete" | "patch";
     url: string;
     params?: any;
     data?: any;
