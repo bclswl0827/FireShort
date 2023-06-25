@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <meta name="description" content="快打开查看吧～" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <title>给你分享了一个链接</title>
+    </head>
+    <body>
+        <noscript>您需要使用支持 JavaSctipt 的浏览器才能正常加载本站</noscript>
+        <script>
+            (() => {
+                const protocol = window.location.protocol;
+                const host = window.location.host;
+                const path = window.location.pathname;
+                if (path !== "/404.html") {
+                    window.location.href = `${protocol}//${host}/#${path}`;
+                } else {
+                    window.location.href = `${protocol}//${host}/`;
+                }
+            })();
+        </script>
+    </body>
+</html>

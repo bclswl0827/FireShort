@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Fire Short",
+  "name": "Fire Short 短链接生成工具",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,4 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
 }
