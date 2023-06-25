@@ -3,7 +3,6 @@ import axios, { AxiosResponse, AxiosError } from "axios";
 interface Params {
     method: "get" | "post" | "put" | "delete";
     url: string;
-    slient?: boolean;
     params?: any;
     data?: any;
     timeout?: number;
@@ -14,7 +13,6 @@ const userRequest = ({
     url,
     data,
     params,
-    slient = false,
     timeout = 10000,
 }: Params): Promise<AxiosResponse> => {
     const _axios = axios.create({
@@ -34,11 +32,9 @@ const userRequest = ({
 
     _axios.interceptors.response.use(
         (res: AxiosResponse) => {
-            slient || alert("您的请求已成功完成，感谢您的使用。");
             return res;
         },
         (err: AxiosError) => {
-            slient || alert(err.message);
             return Promise.reject(err);
         }
     );

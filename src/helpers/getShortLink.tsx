@@ -19,7 +19,6 @@ const getShortLink = async ({ slug, firebase }: Params): Promise<Result> => {
 
     const res = await userRequest({
         method: "get",
-        slient: true,
         url: dbURL,
     });
     if (res.data === null) {

@@ -19,7 +19,6 @@ const addShortLink = async ({
     const dbURL = `${firebase}/shorts/${slug}.json`;
     const res = await userRequest({
         method: "put",
-        slient: true,
         url: dbURL,
         data: {
             url: url,

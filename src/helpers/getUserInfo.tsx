@@ -24,7 +24,6 @@ const getUserInfo = async (): Promise<Result> => {
             const res = await userRequest({
                 url: api,
                 method: "get",
-                slient: true,
             });
 
             const {

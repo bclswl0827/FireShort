@@ -9,7 +9,6 @@ const removeShortLink = async ({ slug, firebase }: Params): Promise<string> => {
     const dbURL = `${firebase}/shorts/${slug}.json`;
     const res = await userRequest({
         method: "delete",
-        slient: true,
         url: dbURL,
     });
 
