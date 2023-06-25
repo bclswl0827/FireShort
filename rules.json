@@ -31,7 +31,7 @@
                     "country": {
                         ".read": true,
                         ".write": true,
-                        ".validate": "newData.isString() && newData.val().length <= 16"
+                        ".validate": "newData.isString() && newData.val().length <= 96"
                     },
                     "ip": {
                         ".read": true,
