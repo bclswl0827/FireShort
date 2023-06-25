@@ -1,10 +1,10 @@
 import { Component } from "react";
+import Container from "./Container";
 
-// 页面加载时显示动画
-export default class AppSpinner extends Component {
+export default class Spinner extends Component {
     render() {
         return (
-            <div className="bg-gradient-to-br from-gray-600 via-gray-800 to-black flex flex-col h-screen justify-center items-center">
+            <Container>
                 <svg
                     className="w-16 text-gray-300 fill-gray-600 animate-spin"
                     viewBox="0 0 100 101"
@@ -20,7 +20,7 @@ export default class AppSpinner extends Component {
                     />
                 </svg>
                 <span className="text-white mt-8 animate-ping">正在加载</span>
-            </div>
+            </Container>
         );
     }
 }

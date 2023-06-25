@@ -2,22 +2,22 @@
     "rules": {
         "shorts": {
             "$query": {
-                "comment": {
+                "remark": {
                     ".read": true,
                     ".write": true,
-                    ".validate": "newData.isString()"
+                    ".validate": "newData.isString() && newData.val().length <= 100"
                 },
                 "slug": {
                     ".read": true,
                     ".write": true,
-                    ".validate": "newData.isString() && newData.val().length >= 4"
+                    ".validate": "newData.isString() && newData.val().length >= 4 && newData.val().length <= 10 && newData.val().matches(/^[a-zA-Z0-9]+$/)"
                 },
                 "url": {
                     ".read": true,
                     ".write": true,
-                    ".validate": "newData.isString() && newData.val().matches(/^(https|http|ftp):\\/\\//)"
+                    ".validate": "newData.isString() && newData.val().matches(/^(https|http|ftp):\\/\\//) && newData.val().length <= 255"
                 },
-                "time": {
+                "timestamp": {
                     ".read": true,
                     ".write": true,
                     ".validate": "newData.isNumber() && now - newData.val() < 30000"
@@ -26,12 +26,12 @@
                     "ua": {
                         ".read": true,
                         ".write": true,
-                        ".validate": "newData.isString()"
+                        ".validate": "newData.isString() && newData.val().length <= 255"
                     },
                     "country": {
                         ".read": true,
                         ".write": true,
-                        ".validate": "newData.isString() && newData.val().length == 2"
+                        ".validate": "newData.isString() && newData.val().length <= 16"
                     },
                     "ip": {
                         ".read": true,
@@ -43,9 +43,9 @@
                 ".read": true,
                 ".write": true,
                 ".indexOn": [
-                    "time"
+                    "timestamp"
                 ],
-                ".validate": "newData.hasChildren(['url','slug','time','comment','user'])"
+                ".validate": "newData.hasChildren(['url','slug','timestamp','remark','user'])"
             },
             ".read": "auth != null",
             ".write": "auth != null"
