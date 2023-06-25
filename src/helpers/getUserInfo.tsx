@@ -10,13 +10,12 @@ const getUserInfo = async (): Promise<Result> => {
     const ipAPIs = [
         "https://ipwho.is",
         "https://ipinfo.io/json",
-        "http://ip-api.com/json",
         "https://ipapi.co/json",
         "https://ip.nf/me.json",
         "https://ip-api.io/json",
         "https://freeipapi.com/api/json",
         "https://api.wolfx.jp/geoip.php",
-        "http://www.geoplugin.net/json.gp",
+        "https://www.geoplugin.net/json.gp",
     ];
 
     const { userAgent } = navigator;
