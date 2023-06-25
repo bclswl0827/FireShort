@@ -11,16 +11,16 @@ const AppConfig = {
     },
     app: {
         // hash、browser、redirect
-        router: "hash",
+        router: "redirect",
         // Firebase 实时数据库地址
         firebase:
             "https://short-url-7030b-default-rtdb.asia-southeast1.firebasedatabase.app",
     },
     animation: {
         // 转场动画时长
-        transition: 500,
+        transition: 1000,
         // 通知动画时长
-        notification: 1000,
+        notification: 2000,
     },
 };
 

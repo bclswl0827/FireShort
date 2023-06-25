@@ -9,7 +9,7 @@ const isURLValid = (url: string): Error => {
     return {
         error: !result,
         message: !result
-            ? "链接内容不合法，请检查是内容否以 http:// 或 https:// 开头，或长度是否超过 512 个字符"
+            ? "链接内容不合法，请检查内容是否以 http:// 或 https:// 开头，或长度是否超过 512 个字符"
             : "",
     };
 };
