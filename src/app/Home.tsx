@@ -11,11 +11,17 @@ import PencilIcon from "../assets/pencil-solid.svg";
 import BookmarkIcon from "../assets/bookmark-regular.svg";
 import CheckIcon from "../assets/check-solid.svg";
 import { isRemarkValid, isSlugValid, isURLValid } from "../helpers/dataChecker";
-import { errorAlert, successAlert, timerAlert } from "../helpers/swalPopups";
+import {
+    errorAlert,
+    successAlert,
+    timerAlert,
+    toastAlert,
+} from "../helpers/swalPopups";
 import getShortLink from "../helpers/getShortLink";
 import generateSlug from "../helpers/generateSlug";
 import addShortLink from "../helpers/addShortLink";
 import { getLocalStorage } from "../helpers/localStorage";
+import toClipboard from "../helpers/toClipboard";
 
 interface State {
     readonly url: string;
@@ -34,6 +40,7 @@ export default class Home extends Component<{}, State> {
     }
 
     handleSubmit = async (): Promise<void> => {
+        const { notification } = AppConfig.animation;
         const { router, firebase } = AppConfig.app;
         let { url, slug, remark } = this.state;
 
@@ -98,16 +105,25 @@ export default class Home extends Component<{}, State> {
                     firebase: firebase,
                     user: userInfo,
                 });
-                successAlert({
+                const fullURL = `${baseProtocol}/${baseHost}${
+                    router === "hash" ? "/#" : ""
+                }/${res}`;
+
+                this.setState({ slug: generateSlug() });
+                await successAlert({
                     title: "创建成功",
-                    html: `短链接 <a href="${baseProtocol}/${baseHost}${
-                        router === "hash" ? "/#" : ""
-                    }/${res}" target="_blank" rel="noreferrer">${baseHost}${
+                    html: `短链接 <a href="${fullURL}" target="_blank" rel="noreferrer">${baseHost}${
                         router === "hash" ? "/#" : ""
                     }/${res}</a> 已创建成功`,
                 });
+                await toClipboard(fullURL);
 
-                this.setState({ slug: generateSlug() });
+                toastAlert({
+                    title: "复制成功",
+                    html: `链接已经复制到剪贴板，您可以直接粘贴使用`,
+                    icon: "info",
+                    timer: notification,
+                });
             } catch {
                 errorAlert({
                     title: "发生错误",
@@ -118,7 +134,7 @@ export default class Home extends Component<{}, State> {
     };
 
     render() {
-        const { title,name, copyright } = AppConfig.site;
+        const { title, name, copyright } = AppConfig.site;
         document.title = title;
 
         return (
