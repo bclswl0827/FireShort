@@ -12,8 +12,8 @@ import AppConfig from "./config";
 import getUserInfo from "./helpers/getUserInfo";
 import { setLocalStorage } from "./helpers/localStorage";
 
-const Home = lazy(() => import("./app/Home"));
-const Link = lazy(() => import("./app/Link"));
+const Home = lazy(() => import("./views/Home"));
+const Link = lazy(() => import("./views/Link"));
 
 const RouteModule = (props: any) => {
     const { location, history } = props;
