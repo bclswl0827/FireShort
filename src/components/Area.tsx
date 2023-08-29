@@ -9,7 +9,7 @@ export default class Area extends Component<Props> {
         const { children } = this.props;
 
         return (
-            <div className="flex-grow text-2xl p-8">{children}</div>
+            <div className="flex-grow text-2xl p-8 lg:w-1/2 md:w-full">{children}</div>
         );
     }
 }
