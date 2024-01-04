@@ -112,9 +112,9 @@ export default class Home extends Component<{}, State> {
                 this.setState({ slug: generateSlug() });
                 await successAlert({
                     title: "创建成功",
-                    html: `短链接 <a href="${fullURL}" target="_blank" rel="noreferrer">${baseHost}${
+                    html: `<a href="${fullURL}" target="_blank" rel="noreferrer">${baseHost}${
                         router === "hash" ? "/#" : ""
-                    }/${res}</a> 已创建成功`,
+                    }/${res}</a><br />点击 OK 复制到剪切板`,
                 });
                 await toClipboard(fullURL);
 

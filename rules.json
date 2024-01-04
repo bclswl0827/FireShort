@@ -47,8 +47,8 @@
                 ],
                 ".validate": "newData.hasChildren(['url','slug','timestamp','remark','user'])"
             },
-            ".read": "auth != null",
-            ".write": "auth != null"
+            ".read": "auth.uid !== null",
+            ".write": "auth.uid !== null"
         }
     }
 }
