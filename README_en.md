@@ -26,20 +26,16 @@ On the Realtime Database page, click the "Rules" tab, copy the contents of `rule
 
 ### 3. Build and deploy the project
 
-Clone this repository, and then modify the `firebase.json` file in the root directory of the project.
-
+1. Clone this repository, and then modify the `firebase.json` file in the root directory of the project.
 ```bash
 $ git clone https://github.com/bclswl0827/FireShort --depth=1 && cd FireShort
 ```
-
-Install the dependencies.
-
+2. Install the dependencies.
 ```bash
 $ npm install
 ```
-
-Build the project.
-
+3. Modify the global and Firebase configuration in `src/config.js`.
+4. Build the project.
 ```bash
 $ npm run build
 ```

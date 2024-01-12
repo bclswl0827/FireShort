@@ -26,20 +26,16 @@ FireShort 是一款基于 Firebase 的 Serverless 纯前端短链接生成工具
 
 ### 3. 部署项目
 
-确保本地已安装 Node.js，然后克隆本仓库，进入项目根目录。
-
+1. 确保本地已安装 Node.js，然后克隆本仓库，进入项目根目录。
 ```bash
 $ git clone https://github.com/bclswl0827/FireShort --depth=1 && cd FireShort
 ```
-
-安装项目所需依赖。
-
+2. 安装项目所需依赖。
 ```bash
 $ npm install
 ```
-
-构建项目。
-
+3. 修改 `src/config.js` 中的全局和 Firebase 配置。
+4. 构建项目。
 ```bash
 $ npm run build
 ```
