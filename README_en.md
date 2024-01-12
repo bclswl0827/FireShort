@@ -1,6 +1,6 @@
 # FireShort
 
-[简体中文](./README.md) | English
+[简体中文](https://github.com/bclswl0827/FireShort/blob/master/README.md) | English
 
 FireShort is a Serverless, pure front-end URL short app based on Firebase.
 
@@ -49,7 +49,3 @@ The output `build` directory is the project build result, which can be deployed 
 ## Sponsor
 
 [DartNode](https://dartnode.com) revolutionizes hosting with our Wholesale Cloud approach, combining affordability with high-performance in a state-of-the-art data center. As a dedicated ARIN Member and network operator, we ensure 24/7 reliability and superior service, empowering your digital journey with cost-effective solutions.
-
-<a href="https://dartnode.com" _target="_blank">
-    <img src="https://app.dartnode.com/assets/dash/images/brand/logo.png" style="background: #2d2d38; border-radius: 5px;" />
-</a>

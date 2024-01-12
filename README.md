@@ -1,8 +1,8 @@
 # FireShort
 
-简体中文 | [English](./README.en.md)
+简体中文 | [English](https://github.com/bclswl0827/FireShort/blob/master/README_en.md)
 
-FireShort 的一款基于 Firebase 的 Serverless 纯前端短链接生成工具
+FireShort 是一款基于 Firebase 的 Serverless 纯前端短链接生成工具
 
 本项目不依赖后端，仅在前端使用 JS 跳转到目标网址，且 URL 结构可同普通短网址程序一样。
 
@@ -49,7 +49,3 @@ $ npm run build
 ## 赞助商
 
 [DartNode](https://dartnode.com) revolutionizes hosting with our Wholesale Cloud approach, combining affordability with high-performance in a state-of-the-art data center. As a dedicated ARIN Member and network operator, we ensure 24/7 reliability and superior service, empowering your digital journey with cost-effective solutions.
-
-<a href="https://dartnode.com" _target="_blank">
-    <img src="https://app.dartnode.com/assets/dash/images/brand/logo.png" style="background: #2d2d38; border-radius: 5px;" />
-</a>
