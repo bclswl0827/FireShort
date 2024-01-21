@@ -44,4 +44,6 @@ $ npm run build
 
 ## 赞助商
 
+<a href="https://dartnode.com"><img src="https://dartnode.com/assets/dash/images/brand/favicon2.png" alt="" width="150px"></a>
+
 [DartNode](https://dartnode.com) revolutionizes hosting with our Wholesale Cloud approach, combining affordability with high-performance in a state-of-the-art data center. As a dedicated ARIN Member and network operator, we ensure 24/7 reliability and superior service, empowering your digital journey with cost-effective solutions.
